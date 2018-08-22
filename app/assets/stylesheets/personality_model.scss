@@ -1,0 +1,78 @@
+// Place all the styles related to the PersonalityModel controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// new.html.erb
+
+h1#new-model-title {
+  text-align: center;
+}
+
+form#new-personality-model {
+  width: 700px;
+  margin: auto;
+  display: block;
+}
+
+form#new-personality-model textarea#author-text {
+  width: 100%;
+  font-size: 15px;
+  padding-left: 3px;
+  box-sizing: border-box;
+}
+
+form#new-personality-model textarea#author-text::placeholder {
+  font-size: 15px;
+  padding-left: 3px;
+}
+
+form#new-personality-model input[type=submit] {
+  width: 50%;
+  margin: 10px 25% 10px;
+  font-size: 15px;
+  padding: 10px 0;
+  -webkit-appearance: button;
+  background-color: blue;
+  color: white;
+  border-radius: 6px;
+  border: none;
+}
+
+// show.html.erb
+
+a#show-author-text {
+  display: block;
+  text-align: center;
+}
+
+a#hide-author-text {
+  display: none;
+  text-align: center;
+}
+
+p#author-text {
+  display: none;
+  width: 80%;
+  color: grey;
+  margin: 10px 10%;
+}
+
+table.personality-model {
+  width: 600px;
+  margin: auto;
+}
+
+table.personality-model th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: lightblue;
+}
+
+table.personality-model td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table.personality-model tr:nth-child(odd) {
+  background-color: lightgrey;
+}

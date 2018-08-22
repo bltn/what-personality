@@ -1,0 +1,6 @@
+<h1 id="new-model-title">Rate someone's personality based on their WhatsApp messages</h1>
+
+<%= form_tag '/personality_model', method: :post, id: "new-personality-model" do |f| %>
+    <%= text_area_tag(:author_text, "", size: "58x12", placeholder: "Your whatsapp logs here", id: "author-text") %><br />
+    <%= submit_tag %>
+<% end %>

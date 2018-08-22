@@ -1,0 +1,70 @@
+<%= link_to "Show author text", "", id: "show-author-text" %>
+<%= link_to "Hide author text", "", id: "hide-author-text" %>
+
+<p id="author-text">
+  <%= @author_text %>
+</p>
+
+<div class="two-column-wrapper">
+  <div class="col1">
+    <% if @traits.nil? %>
+      <p>The Big 5 Traits couldn't be loaded. </p>
+    <% else %>
+      <h2>Big 5 traits</h2>
+      <table class="personality-model">
+        <tr>
+          <th>Trait</th>
+          <th>Percentile</th>
+        </tr>
+          <% @traits.each do |trait| %>
+            <tr>
+              <td><%= trait["name"] %></td>
+              <td><%= trait["percentile"] %></td>
+            </tr>
+          <% end %>
+      </table>
+    <% end %>
+  </div>
+  
+  <div class="col2">
+    <% if @values.nil? %>
+      <p>Values couldn't be loaded. </p>
+    <% else %>
+    
+      <h2>Values</h2>
+      <table class="personality-model">
+        <tr>
+          <th>Value</th>
+          <th>Percentile</th>
+        </tr>
+        <% @values.each do |value| %>
+          <tr>
+            <td><%= value["name"] %></td>
+            <td><%= value["percentile"] %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+<% if @needs.nil? %>
+  <p>Needs couldn't be loaded. </p>
+<% else %>
+
+  <h2>Needs</h2>
+  <table class="personality-model">
+    <tr>
+      <th>Need</th>
+      <th>Percentile</th>
+    </tr>
+    <% @needs.each do |need| %>
+      <tr>
+        <td><%= need["name"] %></td>
+        <td><%= need["percentile"] %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+

@@ -1,0 +1,3 @@
+module PersonalityModelHelper
+end
+
