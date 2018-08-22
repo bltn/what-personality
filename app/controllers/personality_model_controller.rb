@@ -14,12 +14,7 @@ class PersonalityModelController < ApplicationController
     response = send_post_request(parsed_watson_api_uri, params[:author_text])
     json_personality_objects = JSON.parse(response.body)
     
-    session["big_5_traits_hash"] = json_personality_objects["personality"]
-    session["needs_hash"] = json_personality_objects["needs"]
-    session["values_hash"] = json_personality_objects["values"]
-    puts "params: #{params[:author_text].nil?}"
-    session["author_text"] = params[:author_text]
-    puts "sesh cr: #{session["author_text"].nil?}"
+    set_session_data(json_personality_objects, params[:author_text])
     
     redirect_to '/personality_model' 
   end 
@@ -28,12 +23,17 @@ class PersonalityModelController < ApplicationController
     @traits = session["big_5_traits_hash"]
     @needs = session["needs_hash"]
     @values = session["values_hash"]
-    puts "sesh sh: #{session["author_text"].nil?}"
     @author_text = session["author_text"]
-    puts "@author_text: #{@author_text.nil?}"
   end 
   
   private
+  
+  def set_session_data(json_personality_objects, author_text)
+    session["big_5_traits_hash"] = json_personality_objects["personality"]
+    session["needs_hash"] = json_personality_objects["needs"]
+    session["values_hash"] = json_personality_objects["values"]
+    session["author_text"] = author_text
+  end
   
   def send_post_request(parsed_uri, data)
     header = {
