@@ -14,14 +14,26 @@ form#new-personality-model {
   display: block;
 }
 
-form#new-personality-model textarea#author-text {
+form#new-personality-model input[type="text"]#author_name {
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+form#new-personality-model input[type="text"]#author_name::placeholder {
+  font-size: 15px;
+  padding-left: 3px;
+}
+
+form#new-personality-model textarea#chat-messages {
   width: 100%;
   font-size: 15px;
   padding-left: 3px;
   box-sizing: border-box;
 }
 
-form#new-personality-model textarea#author-text::placeholder {
+form#new-personality-model textarea#chat-messages::placeholder {
   font-size: 15px;
   padding-left: 3px;
 }
@@ -40,17 +52,17 @@ form#new-personality-model input[type=submit] {
 
 // show.html.erb
 
-a#show-author-text {
+a#show-chat-messages {
   display: block;
   text-align: center;
 }
 
-a#hide-author-text {
+a#hide-chat-messages {
   display: none;
   text-align: center;
 }
 
-p#author-text {
+p#chat-messages {
   display: none;
   width: 80%;
   color: grey;

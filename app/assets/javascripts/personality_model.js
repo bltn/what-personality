@@ -1,15 +1,15 @@
 $(document).ready(function(){
-    $("a#show-author-text").click(function(e){
+    $("a#show-chat-messages").click(function(e){
         e.preventDefault();
         $(this).hide();
-        $("p#author-text").show();
-        $("a#hide-author-text").css("display", "block");
+        $("p#chat-messages").show();
+        $("a#hide-chat-messages").css("display", "block");
     });
     
-    $("a#hide-author-text").click(function(e){
+    $("a#hide-chat-messages").click(function(e){
         e.preventDefault();
         $(this).hide();
-        $("p#author-text").hide();
-        $("a#show-author-text").css("display", "block");
+        $("p#chat-messages").hide();
+        $("a#show-chat-messages").css("display", "block");
     });
 });
