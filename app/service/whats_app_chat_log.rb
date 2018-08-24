@@ -8,7 +8,7 @@ class WhatsAppChatLog
         messages_belonging_to_author << without_author_tag.squish
       end
     end
-    messages_belonging_to_author
+    messages_belonging_to_author.join("\n")
   end
   
   def self.message_not_clean(msg)
